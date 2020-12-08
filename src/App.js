@@ -34,7 +34,6 @@ import Container from "./container/Container";
 export default function App() {
   return (
     <div className="App">
-      <h5>Her kunne en global meny vært..</h5>
       <Container />
     </div>
   );

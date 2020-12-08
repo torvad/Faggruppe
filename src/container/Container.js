@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import containerReducer from "./containerReducer";
 import Welcome from "./components/Welcome";
-import Home from "./components/Home";
 import MercList from "./components/MercList";
 import MercItem from "./components/MercItem";
 import ShoppingCart from './components/ShoppingCart'
