@@ -1,0 +1,33 @@
+Kundecase: Style Shopping-app'en fra forrige gang
+
+Oppdraget ditt er å style applikasjonen vi jobbet med forrige gang.
+
+Som alle kunder ønsker de en kul applikasjon, en som ser fresh ut. Du står fritt til å designe det slik du vil med de farger du har til rådighet i fargepaletten under.
+Et krav derimot er at de vil ha logoen oppe i venstre hjørne. I det andre hjørnet ønsker de en annnen logo du finner under assets.
+Denne skal være utformet med en rund bakgrunn i bunn og med logoen over.
+
+Her er fargepaletten kunden ønsker du skal bruke:
+
+Hovedfarge: #4b005a alt: #821996
+Støttefarger: #2a496e #6c8e23 #cec976
+Skrift: #32003c
+Fyll: #bebbb4 #706964
+
+
+1. Start med å utforme header. Du finner template for denne components. 
+   Logo skal ligge til venstre. De tre menypunktene ønsker de å ha på høyre side av headeren. 
+
+2. Kunden har blitt inspirert etter å ha sett på andre applikasjoner på nettet.
+   De kommer med forslag om en skygge under header. Kan du vise dem hvordan dette kan se ut?
+
+
+3. Lag en ny styled component for produktlisten og style denne på bakgrunn av fargepaletten.
+
+4. Lag en ny styled component for knapp. Bruk denne på siden hvor en bestiller produkt.
+
+5. Lag en ny styled component generelt for knapper som de andre knappene arver av.
+   Denne skal ha border-radius: 4px, background: #ccc; border: 1px solid #bbb;
+
+6. Lag en ny styled component for siden hvor en bestiller produkt listen og style denne på bakgrunn av fargepaletten.
+
+7. Kunden ønsker så å prøve en av støttefargene som hovedfarge. Lag et nytt forslag.
