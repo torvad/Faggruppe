@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
 import containerReducer from "./containerReducer";
-import Welcome from "./components/Welcome";
-import MercList from "./components/MercList";
+//import Welcome from "./components/Welcome";
+import Home from "./pages/Home";
+import MercList from "./pages/MercList";
 import MercItem from "./components/MercItem";
-import ShoppingCart from './components/ShoppingCart'
+import ShoppingCart from './pages/ShoppingCart'
 import Menu from './components/Menu'
 import { SpinnerPage } from "./components/SpinnerPage";
 import { mercRepo } from "../repositories/mercRepo";
-
+import PageHeader from './components/page-header/page-header';
 /*
   Dette er hoved containeren, den skal orcestrere mange skjermbilder,
   Det gjøres ved hjelp av kall til reduceren,
@@ -45,15 +46,25 @@ const Container = (props) => {
         Dersom det første uttrykket er false, sjekkes ikke neste uttrykk 
         Neste uttrykk rendrer innhodld, dvs Welcome componenten
       */}
-      {state.activeForm === forms.WELCOME && <Welcome next={showHome} />}
+      {state.activeForm === forms.WELCOME && (
+        <>
+          <PageHeader hjem={showHome} tilProduktListen={showMercList} tilShoppingCart={showShoppingCart} />
+          <Home next={showMercList} />
+        </>
+      )}
 
       {/* Home siden */}
-      {state.activeForm === forms.HOME && <Home next={showMercList} />}
+      {state.activeForm === forms.HOME && (
+        <>
+          <PageHeader hjem={showHome} tilProduktListen={showMercList} tilShoppingCart={showShoppingCart} />
+          <Home next={showMercList} />
+        </>
+      )}
 
       {/* Siden med listen over produkter, merk at her har også rendret menyen */}
       {state.activeForm === forms.MERCLIST && (
         <>
-          <Menu hjem={showHome} tilProduktListen={showMercList} tilShoppingCart={showShoppingCart} />
+          <PageHeader hjem={showHome} tilProduktListen={showMercList} tilShoppingCart={showShoppingCart} />
           <MercList mercs={state.items} showProduct={showProduct} />
         </>
       )}
@@ -61,7 +72,7 @@ const Container = (props) => {
       {/* Detaljbilde for Mercs, med meny.. */}
       {state.activeForm === forms.MERCDETAILS && (
         <>
-          <Menu hjem={showHome} tilProduktListen={showMercList} tilShoppingCart={showShoppingCart} />
+           <PageHeader hjem={showHome} tilProduktListen={showMercList} tilShoppingCart={showShoppingCart} />
           <MercItem item={state.currentItem} buyItem={buyItem} />
         </>
       )}
@@ -69,7 +80,7 @@ const Container = (props) => {
       {/* Detaljbilde for ShoppingCart, med meny.. */}
       {state.activeForm === forms.SHOPPINGCART && (
         <>
-          <Menu hjem={showHome} tilProduktListen={showMercList} tilShoppingCart={showShoppingCart} />
+         <PageHeader hjem={showHome} tilProduktListen={showMercList} tilShoppingCart={showShoppingCart} />
           <ShoppingCart shoppingCart={state.shoppingCart}  />
         </>
       )}
