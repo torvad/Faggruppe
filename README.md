@@ -1,2 +1,1 @@
-# reactContainerReducer
-Created with CodeSandbox
+# Styling and design tutorial
