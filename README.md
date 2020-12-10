@@ -1,1 +1,1 @@
-# Styling and desig tutorial
+# Styling and design tutorial
